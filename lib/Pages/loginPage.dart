@@ -46,11 +46,13 @@ class _loginPageState extends State<loginPage> {
                           color: Colors.white,
                         ),
                       ),
+                      // Image AngkotKita
                       Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 100),
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 150),
                         child: Image.asset(
                           'assets/images/angkotKitaLogo.png',
+                          width: 250,
                         ),
                       ),
                     ],

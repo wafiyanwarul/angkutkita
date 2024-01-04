@@ -1,4 +1,5 @@
 import 'package:angkotkita/main.dart';
+import 'package:angkotkita/pages/onLoginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
@@ -50,7 +51,12 @@ class waveBottomWidget extends StatelessWidget {
                       // Login Button
                       ElevatedButton(
                         onPressed: () {
-                          
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => onLoginPage(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
@@ -63,7 +69,7 @@ class waveBottomWidget extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          'Log In',
+                          'Login',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18.0,
@@ -72,6 +78,7 @@ class waveBottomWidget extends StatelessWidget {
                           ),
                         ),
                       ),
+                      // Spacebar
                       SizedBox(
                         height: 15,
                       ),

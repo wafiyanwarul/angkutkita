@@ -1,6 +1,7 @@
 import 'package:angkotkita/Pages/landingPage.dart';
 import 'package:angkotkita/Pages/loginPage.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:angkotkita/pages/registerPage.dart';
 import 'package:angkotkita/widgets/linearProgressBar.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: landingPage(),
+      home: landingPage (),
     );
   }
 }
