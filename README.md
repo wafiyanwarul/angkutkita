@@ -1,7 +1,7 @@
 ## angkotkita
 
 <div style="text-align:center">
-  <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="400" height="400">
+  <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="250">
 </div>
 
 Angkut Kita is an order angkot application, developed by team BitPath HackFest 2024 Indonesia
