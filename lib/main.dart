@@ -1,5 +1,6 @@
 import 'package:angkotkita/Pages/landingPage.dart';
-import 'package:angkotkita/Widgets/linearProgressBar.dart';
+import 'package:angkotkita/Pages/loginPage.dart';
+import 'package:angkotkita/widgets/linearProgressBar.dart';
 import 'package:flutter/material.dart';
 
 void main() {

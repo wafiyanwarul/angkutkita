@@ -39,6 +39,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  wave: ^0.2.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -78,6 +79,11 @@ flutter:
     - family: LexendDeca
       fonts:
         - asset: assets/fonts/LexendDeca-ExtraBold.ttf
+        - asset: assets/fonts/LexendDeca-Bold.ttf
+        - asset: assets/fonts/LexendDeca-Black.ttf
+        - asset: assets/fonts/LexendDeca-Regular.ttf
+        - asset: assets/fonts/LexendDeca-Medium.ttf
+        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -41,17 +41,13 @@ class _linearProgressBarState extends State<linearProgressBar> {
       child: Center(
         child: _isLoading
             ? Container(
-                width: 230  ,
+                width: 215,
                 height: 10,
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(50),
-                //   border: Border.all(width: 2),
-                // ),
                 child: LinearProgressIndicator(
                   value: _progressValue,
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
                   backgroundColor: Colors.white, // Warna latar belakang
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(10),
                 ),  
               )
             : Container(), // Tidak ada ElevatedButton

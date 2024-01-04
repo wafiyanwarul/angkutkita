@@ -1,4 +1,4 @@
-import 'package:angkotkita/Widgets/linearProgressBar.dart';
+import 'package:angkotkita/widgets/linearProgressBar.dart';
 import 'package:flutter/material.dart';
 import 'package:angkotkita/main.dart';
 
@@ -33,13 +33,12 @@ class _landingPageState extends State<landingPage> {
             Text(
               'AngkutKita',
               style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.normal,
+                fontSize: 35,
+                fontWeight: FontWeight.w900,
                 fontFamily: 'LexendDeca',
                 color: Colors.white,
               ),
             ),
-
             SizedBox(
               height: 20,
             ),
