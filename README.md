@@ -1,6 +1,9 @@
 # angkotkita
-<<<<<<< HEAD
+
+-----------------------------------------
 angkot order by team BitPath HackFest2024
+-----------------------------------------
+
 =======
 
 A new Flutter project.
