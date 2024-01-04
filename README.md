@@ -1,14 +1,14 @@
-# angkotkita
-![logoAngkotKita](assets/images/angkotKitaLogo.png){width=40px height=40px}
+## angkotkita
+
+<div style="text-align:center">
+  <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="40" height="40">
+</div>
 -----------------------------------------
-angkot order by team BitPath HackFest2024
+Angkut Kita is an order angkot application, developed by team BitPath HackFest 2024 Indonesia
 -----------------------------------------
+This project developed to face and solve SDGs
 
-=======
-
-A new Flutter project.
-
-## Getting Started
+## To trying this app, follow all of the instructions below
 
 This project is a starting point for a Flutter application.
 
