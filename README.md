@@ -1,5 +1,5 @@
 # angkotkita
-
+![logoAngkotKita](assets/images/angkotKitaLogo.png){width=40px height=40px}
 -----------------------------------------
 angkot order by team BitPath HackFest2024
 -----------------------------------------
