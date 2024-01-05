@@ -1,5 +1,6 @@
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:angkotkita/pages/registerPage.dart';
 import 'package:flutter/material.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
@@ -84,7 +85,14 @@ class waveBottomWidget extends StatelessWidget {
                       ),
                       // Sign Up Button
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => registerPage(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                             horizontal: 50,

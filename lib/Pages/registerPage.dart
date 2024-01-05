@@ -1,4 +1,5 @@
 import 'package:angkotkita/main.dart';
+import 'package:angkotkita/pages/accountConfirmPage.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,6 @@ class _registerPageState extends State<registerPage> {
     return Scaffold(
       body: ListView(
         children: [
-          
           AppBar(
             leading: InkWell(
               onTap: () {
@@ -239,7 +239,7 @@ class _registerPageState extends State<registerPage> {
                                       },
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
 
@@ -253,7 +253,14 @@ class _registerPageState extends State<registerPage> {
                             // Create Account Button
                             Container(
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => accountConfirmPage(),
+                                    ),
+                                  );
+                                },
                                 style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 90,
@@ -274,7 +281,7 @@ class _registerPageState extends State<registerPage> {
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -303,11 +310,11 @@ class _registerPageState extends State<registerPage> {
                       onTap: () {
                         // Handle the "Sign In" tap
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => onLoginPage(),
-                            ),
-                          );
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => onLoginPage(),
+                          ),
+                        );
                       },
                       child: Text(
                         'Sign In',
