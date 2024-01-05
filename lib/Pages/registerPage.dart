@@ -297,6 +297,7 @@ class _registerPageState extends State<registerPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Text already have an account 
                     Text(
                       'Already have account? ',
                       style: TextStyle(
@@ -306,6 +307,7 @@ class _registerPageState extends State<registerPage> {
                         fontSize: 15,
                       ),
                     ),
+                    // Text with gesture "Sign In"
                     GestureDetector(
                       onTap: () {
                         // Handle the "Sign In" tap

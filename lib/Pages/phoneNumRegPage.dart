@@ -1,5 +1,7 @@
 import 'package:angkotkita/main.dart';
+import 'package:angkotkita/pages/testProfilePage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class phoneNumRegPage extends StatefulWidget {
@@ -10,6 +12,10 @@ class phoneNumRegPage extends StatefulWidget {
 }
 
 class _phoneNumRegPageState extends State<phoneNumRegPage> {
+  GlobalKey<FormState> _formKey = GlobalKey();
+
+  FocusNode focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,122 +88,111 @@ class _phoneNumRegPageState extends State<phoneNumRegPage> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // Label Enter 6 digit code
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Enter the 6-digit code sent to:',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'LexendDeca',
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
-                          ),
-                          // Spacebar
-                          SizedBox(height: 10),
-                          // Label Email
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'abcExample@example.com',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'LexendDeca',
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
-                          ),
-                          // Spacebar
-                          SizedBox(height: 15),
-                          // Digit Code TextField with Toggle Visibility
-                          TextField(
-                            cursorColor: Colors.blue.shade800,
-                            decoration: InputDecoration(
-                              hintText: 'Enter 6 code here',
-                              hintStyle: TextStyle(
-                                color: Colors.black.withOpacity(0.5),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.red.withOpacity(0.8),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              contentPadding: EdgeInsets.only(
-                                  left: 15, top: 10, bottom: 10),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Row(
+                      // For phone number form (using package intl_phone_number_flutter
+                      child: Form(
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Label Enter 6 digit code
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Kode terdiri dari 6 digit',
+                                  'With a valid number you can access reides \ndeliceries, and out other services',
                                   style: TextStyle(
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontFamily: 'LexendDeca',
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                          // Spacebar
-                          SizedBox(height: 20),
-                          // Confirm Button
-                          Container(
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // if else condition (true when 6 code matched, false when 6 code not matched)
-
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => accountConfirmPage(),
-                                //   ),
-                                // );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 130,
-                                  vertical: 10,
-                                ),
-                                primary: Colors.blue.shade800,
-                                shape: RoundedRectangleBorder(
+                            // Spacebar
+                            SizedBox(height: 15),
+                            IntlPhoneField(
+                              dropdownTextStyle:
+                                  TextStyle(), // Country Code Style
+                              focusNode: focusNode,
+                              cursorColor: Colors.blue,
+                              decoration: InputDecoration(
+                                hintText: 'Your phone number',
+                                hintStyle: TextStyle(color: Colors.grey),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                    width: 2,
+                                  ),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
+                                contentPadding: EdgeInsets.only(
+                                    left: 30.0, top: 20.0, bottom: 10.0),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Colors.blue,
+                                    width: 1.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: focusNode.hasFocus
+                                        ? Colors.blue
+                                        : Colors.white,
+                                  ),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
                               ),
-                              child: Text(
-                                'Confirm',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontFamily: 'LexendDeca',
-                                  fontWeight: FontWeight.w600,
+                              languageCode: "en",
+                              onChanged: (phone) {
+                                print(phone.completeNumber);
+                              },
+                              onCountryChanged: (country) {
+                                print('Country changed to: ' + country.name);
+                              },
+                            ),
+
+                            // Spacebar
+                            SizedBox(height: 15),
+                            // Submit Button
+                            Container(
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  _formKey.currentState?.validate();
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => testLoginPage(),
+                                    ),
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 135,
+                                    vertical: 10,
+                                  ),
+                                  primary: Colors.blue.shade800,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontFamily: 'LexendDeca',
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          // Spacebar
-                          SizedBox(height: 5),
-                        ],
+                            // Spacebar
+                            SizedBox(height: 5),
+                          ],
+                        ),
                       ),
                     ))
               ],

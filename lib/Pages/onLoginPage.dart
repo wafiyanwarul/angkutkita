@@ -276,7 +276,7 @@ class _onLoginPageState extends State<onLoginPage> {
                   SizedBox(
                     height: 15,
                   ),
-                  // Don't have an Account
+                  // Text 'Don't have an Account'
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

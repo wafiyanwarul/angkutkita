@@ -1,6 +1,6 @@
 import 'package:angkotkita/main.dart';
+import 'package:angkotkita/pages/phoneNumRegPage.dart';
 import 'package:flutter/material.dart';
-import 'package:vibration/vibration.dart';
 import 'package:flutter/services.dart';
 
 class accountConfirmPage extends StatefulWidget {
@@ -187,12 +187,12 @@ class _accountConfirmPageState extends State<accountConfirmPage> {
                                 onPressed: () {
                                   // if else condition (true when 6 code matched, false when 6 code not matched)
 
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) => accountConfirmPage(),
-                                  //   ),
-                                  // );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => phoneNumRegPage(),
+                                    ),
+                                  );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.symmetric(
