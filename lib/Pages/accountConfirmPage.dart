@@ -3,6 +3,8 @@ import 'package:angkotkita/pages/phoneNumRegPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+final String userEmail = 'testemail@flutter.com';
+
 class accountConfirmPage extends StatefulWidget {
   const accountConfirmPage({super.key});
 
@@ -11,7 +13,8 @@ class accountConfirmPage extends StatefulWidget {
 }
 
 class _accountConfirmPageState extends State<accountConfirmPage> {
-  var userEmail = '';
+  // _accountConfirmPageState({required this.userEmail});
+
   bool _obscureText = true;
   TextEditingController _controller = TextEditingController();
 
@@ -103,7 +106,7 @@ class _accountConfirmPageState extends State<accountConfirmPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'abcExample@example.com',
+                                '$userEmail',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'LexendDeca',
@@ -182,39 +185,39 @@ class _accountConfirmPageState extends State<accountConfirmPage> {
                           // Spacebar
                           SizedBox(height: 20),
                           // Confirm Button
-                            Container(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  // if else condition (true when 6 code matched, false when 6 code not matched)
+                          Container(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                // if else condition (true when 6 code matched, false when 6 code not matched)
 
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => phoneNumRegPage(),
-                                    ),
-                                  );
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 130,
-                                    vertical: 10,
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => phoneNumRegPage(),
                                   ),
-                                  primary: Colors.blue.shade800,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 130,
+                                  vertical: 10,
                                 ),
-                                child: Text(
-                                  'Confirm',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontFamily: 'LexendDeca',
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                primary: Colors.blue.shade800,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: Text(
+                                'Confirm',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontFamily: 'LexendDeca',
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
+                          ),
                           // Spacebar
                           SizedBox(height: 5),
                         ],

@@ -1,14 +1,16 @@
 import 'package:angkotkita/main.dart';
+import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class testLoginPage extends StatefulWidget {
-  const testLoginPage({super.key});
+class testProfilePage extends StatefulWidget {
+  const testProfilePage({super.key});
 
   @override
-  State<testLoginPage> createState() => _testLoginPageState();
+  State<testProfilePage> createState() => _testProfilePageState();
 }
 
-class _testLoginPageState extends State<testLoginPage> {
+class _testProfilePageState extends State<testProfilePage> {
   int _selectedIndex = 0;
   bool _isEditing = false;
 
@@ -34,7 +36,7 @@ class _testLoginPageState extends State<testLoginPage> {
             children: [
               Container(
                 color: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 100),
+                padding: EdgeInsets.symmetric(vertical: 40),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,11 +44,10 @@ class _testLoginPageState extends State<testLoginPage> {
                     Text(
                       'Profile',
                       style: TextStyle(
-                        color: bgColor,
-                        fontFamily: 'LexendDeca',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 30
-                      ),
+                          color: bgColor,
+                          fontFamily: 'LexendDeca',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 30),
                     ),
                     SizedBox(
                       height: 30,
@@ -72,6 +73,74 @@ class _testLoginPageState extends State<testLoginPage> {
                         _emailController),
                     buildTextFieldRow('Mobile Number', '+62 895-0399-2656',
                         _mobileController),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    // Button become a driver
+                    Container(
+                      // padding: EdgeInsets.symmetric(horizontal: 70),
+                      // color: Colors.amber,
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 105,
+                                vertical: 10,
+                              ),
+                              primary: Colors.blue.shade800,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text(
+                              'Become a driver',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'LexendDeca',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          // Button sign out
+                          ElevatedButton(
+                            onPressed: () {
+                              FirebaseAuth.instance.signOut();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => onLoginPage(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 145,
+                                vertical: 10,
+                              ),
+                              primary: Colors.blue.shade800,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text(
+                              'Sign Out',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'LexendDeca',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -164,7 +164,7 @@ class _phoneNumRegPageState extends State<phoneNumRegPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => testLoginPage(),
+                                      builder: (context) => testProfilePage(),
                                     ),
                                   );
                                 },

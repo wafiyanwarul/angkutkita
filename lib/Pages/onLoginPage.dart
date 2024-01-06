@@ -1,6 +1,13 @@
+import 'package:angkotkita/features/user_auth/firebase_auth_implementation/firebase_auth_service.dart';
+import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/registerPage.dart';
+import 'package:angkotkita/pages/testProfilePage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
+
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class onLoginPage extends StatefulWidget {
   const onLoginPage({super.key});
@@ -10,17 +17,44 @@ class onLoginPage extends StatefulWidget {
 }
 
 class _onLoginPageState extends State<onLoginPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  bool _obscureText = true;
+  bool _isSigning = false;
+
+  // text editing Controller
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  // void signUserIn() async {
+  //   try {
+  //     await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //       email: emailController.text,
+  //       password: passwordController.text,
+  //     );
+  //   } on FirebaseAuthException catch (e) {
+  //     print("Firebase Auth Exception: ${e.message}");
+  //       }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 60,
-              ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 60,
+            ),
+            child: Container(
               child: Column(
                 children: [
                   Text(
@@ -92,6 +126,7 @@ class _onLoginPageState extends State<onLoginPage> {
                                   SizedBox(height: 10),
                                   // Email TextField
                                   TextField(
+                                    controller: _emailController,
                                     keyboardType: TextInputType.emailAddress,
                                     cursorColor: Colors.blue.shade800,
                                     decoration: InputDecoration(
@@ -139,7 +174,42 @@ class _onLoginPageState extends State<onLoginPage> {
                                   // Spacebar
                                   SizedBox(height: 10),
                                   // Password TextField with Toggle Visibility
-                                  PasswordField(),
+                                  TextField(
+                                    controller: _passwordController,
+                                    cursorColor: Colors.blue.shade800,
+                                    obscureText: _obscureText,
+                                    decoration: InputDecoration(
+                                      hintText: 'Enter your password',
+                                      hintStyle: TextStyle(
+                                        color: bgColor.withOpacity(0.5),
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: bgColor.withOpacity(0.4),
+                                            width: 1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      contentPadding: EdgeInsets.only(
+                                          left: 15, top: 10, bottom: 10),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      suffixIcon: IconButton(
+                                        icon: Icon(
+                                          _obscureText
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            _obscureText = !_obscureText;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
 
@@ -161,7 +231,6 @@ class _onLoginPageState extends State<onLoginPage> {
                                         fontFamily: 'LexendDeca',
                                         fontWeight: FontWeight.w600,
                                         fontSize: 15,
-                                        decoration: TextDecoration.underline,
                                       ),
                                     ),
                                   ),
@@ -173,27 +242,41 @@ class _onLoginPageState extends State<onLoginPage> {
                               ),
                               // Login Button
                               Container(
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 142,
-                                      vertical: 10,
-                                    ),
-                                    primary: Colors.blue.shade800,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    'Login',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontFamily: 'LexendDeca',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
+                                child: InkWell(
+                                  onTap: _signIn,
+                                  child: Container(
+                                      width: double.infinity,
+                                      height: 45,
+                                      decoration: BoxDecoration(
+                                        color: Colors.blue.shade800,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(
+                                    child: _isSigning
+                                        ? CircularProgressIndicator(
+                                            color: Colors.white,
+                                          )
+                                        : Text(
+                                            'Login',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontFamily: 'LexendDeca',
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                  )),
+
+                                  // style: ElevatedButton.styleFrom(
+                                  //   padding: EdgeInsets.symmetric(
+                                  //     horizontal: 142,
+                                  //     vertical: 10,
+                                  //   ),
+                                  //   primary: Colors.blue.shade800,
+                                  //   shape: RoundedRectangleBorder(
+                                  //     borderRadius: BorderRadius.circular(10),
+                                  //   ),
+                                  // ),
                                 ),
                               )
                             ],
@@ -319,49 +402,31 @@ class _onLoginPageState extends State<onLoginPage> {
       ),
     );
   }
-}
 
-class PasswordField extends StatefulWidget {
-  const PasswordField({super.key});
+  void _signIn() async {
+    setState(() {
+      _isSigning = true;
+    });
 
-  @override
-  State<PasswordField> createState() => _PasswordFieldState();
-}
+    String email = _emailController.text;
+    String password = _passwordController.text;
 
-class _PasswordFieldState extends State<PasswordField> {
-  bool _obscureText = true;
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
 
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      cursorColor: Colors.blue.shade800,
-      obscureText: _obscureText,
-      decoration: InputDecoration(
-        hintText: 'Enter your password',
-        hintStyle: TextStyle(
-          color: bgColor.withOpacity(0.5),
+    setState(() {
+      _isSigning = false;
+    });
+
+    if (user != null) {
+      showToast(message: 'User is successfully logged in');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => testProfilePage(),
         ),
-        filled: true,
-        fillColor: Colors.white,
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: bgColor.withOpacity(0.4), width: 1),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        contentPadding: EdgeInsets.only(left: 15, top: 10, bottom: 10),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        suffixIcon: IconButton(
-          icon: Icon(
-            _obscureText ? Icons.visibility : Icons.visibility_off,
-          ),
-          onPressed: () {
-            setState(() {
-              _obscureText = !_obscureText;
-            });
-          },
-        ),
-      ),
-    );
+      );
+    } else {
+      showToast(message: 'Some Error happened');
+    }
   }
 }

@@ -9,9 +9,9 @@ class UserModel {
 
   const UserModel({
     this.id,
-    required this.name,
     required this.email,
     required this.password,
+    required this.name,
     required this.phoneNo,
   });
 
@@ -23,4 +23,16 @@ class UserModel {
       "PhoneNo": phoneNo
     };
   }
+
+  // // STEP 1 - Map User fetched from Firebase to UserModel
+  // factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>>document) {
+  //   final data = document.data()!;
+  //   return UserModel {
+  //     id: document.id;
+  //     name: data["Name"];
+  //     email: data["Email"];
+  //     password: data["Password"];
+  //     phoneNo: data["Phone"];
+  //   };
+  // }
 }

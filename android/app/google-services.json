@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "691877729581",
+    "project_id": "angkutkitaauth",
+    "storage_bucket": "angkutkitaauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691877729581:android:851f830a0f96cadcc8afa4",
+        "android_client_info": {
+          "package_name": "com.example.angkotkita"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4mGevjW3hsx-a-DA538O455vTk9TvFuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

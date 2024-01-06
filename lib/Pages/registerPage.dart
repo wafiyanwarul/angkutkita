@@ -1,6 +1,9 @@
+import 'package:angkotkita/features/user_auth/firebase_auth_implementation/firebase_auth_service.dart';
+import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/accountConfirmPage.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class registerPage extends StatefulWidget {
@@ -12,6 +15,21 @@ class registerPage extends StatefulWidget {
 
 class _registerPageState extends State<registerPage> {
   bool _obscureText = true;
+  bool _isSignUp = false;
+
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +117,7 @@ class _registerPageState extends State<registerPage> {
                                 SizedBox(height: 10),
                                 // Name TextField
                                 TextField(
+                                  controller: _nameController,
                                   keyboardType: TextInputType.emailAddress,
                                   cursorColor: Colors.blue.shade800,
                                   decoration: InputDecoration(
@@ -142,6 +161,7 @@ class _registerPageState extends State<registerPage> {
                                 SizedBox(height: 10),
                                 // Email TextField
                                 TextField(
+                                  controller: _emailController,
                                   keyboardType: TextInputType.emailAddress,
                                   cursorColor: Colors.blue.shade800,
                                   decoration: InputDecoration(
@@ -184,7 +204,42 @@ class _registerPageState extends State<registerPage> {
                                 // Spacebar
                                 SizedBox(height: 10),
                                 // Password TextField with Toggle Visibility
-                                PasswordField(),
+                                TextField(
+                                  controller: _passwordController,
+                                  cursorColor: Colors.blue.shade800,
+                                  obscureText: _obscureText,
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter your password',
+                                    hintStyle: TextStyle(
+                                      color: bgColor.withOpacity(0.5),
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: bgColor.withOpacity(0.4),
+                                          width: 1),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 15, top: 10, bottom: 10),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    suffixIcon: IconButton(
+                                      icon: Icon(
+                                        _obscureText
+                                            ? Icons.visibility
+                                            : Icons.visibility_off,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _obscureText = !_obscureText;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
                                 // Spacebar
                                 SizedBox(height: 15),
                                 // Label Password
@@ -252,32 +307,33 @@ class _registerPageState extends State<registerPage> {
                             ),
                             // Create Account Button
                             Container(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => accountConfirmPage(),
-                                    ),
+                              child: InkWell(
+                                onTap: () {
+                                  _signUp();
+                                  showToast(
+                                    message: 'User is successfully created',
                                   );
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 90,
-                                    vertical: 10,
-                                  ),
-                                  primary: Colors.blue.shade800,
-                                  shape: RoundedRectangleBorder(
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 45,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue.shade800,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                ),
-                                child: Text(
-                                  'Create Account',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontFamily: 'LexendDeca',
-                                    fontWeight: FontWeight.w600,
+                                  child: Center(
+                                    child: _isSignUp
+                                        ? CircularProgressIndicator(
+                                            color: Colors.blue)
+                                        : Text(
+                                            'Create Account',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontFamily: 'LexendDeca',
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
                                   ),
                                 ),
                               ),
@@ -297,7 +353,7 @@ class _registerPageState extends State<registerPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Text already have an account 
+                    // Text already have an account
                     Text(
                       'Already have account? ',
                       style: TextStyle(
@@ -336,5 +392,33 @@ class _registerPageState extends State<registerPage> {
         ],
       ),
     );
+  }
+
+  void _signUp() async {
+    setState(() {
+      _isSignUp = true;
+    });
+
+    String name = _nameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+
+    setState(() {
+      _isSignUp = false;
+    });
+
+    if (user != null) {
+      showToast(message: 'User is successfully created');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => accountConfirmPage(),
+        ),
+      );
+    } else {
+      showToast(message: 'Some Error happened');
+    }
   }
 }
