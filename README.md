@@ -7,11 +7,14 @@
   
   <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="200">
 
+  </br>
+
   <p>Angkut Kita is an order angkot application, developed by <img src = 'https://img.shields.io/badge/Bit-Path-DD435F?style=for-the-badge&labelColor=grey'> Team</p>
   <h4>Made With</h4>
   <p><img src = 'https://img.shields.io/badge/flutter-blue?style=for-the-badge&logo=flutter&logoColor=blue&labelColor=white'> <img src = 'https://img.shields.io/badge/Firebase-orange?style=for-the-badge&logo=firebase&logoColor=orange&labelColor=white'> </p>
 </div>
 
+</br>
 
 This project developed to face and solve SDGs
 
