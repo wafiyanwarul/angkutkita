@@ -1,7 +1,10 @@
 <div align = 'center'>
   <h1>Welcome to <a href = ''>Angkut Kita</a></h1>
-  <img src = 'https://img.shields.io/badge/Angkut-Kita-blue?style=for-the-badge&logo=kompas&labelColor=E0E0E0' alt = 'Angkut Kita Badge'>
 
+  <img src = 'https://img.shields.io/badge/Angkut-Kita-blue?style=for-the-badge&logo=kompas&labelColor=E0E0E0' alt = 'Angkut Kita Badge'>
+  
+  </br>
+  
   <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="200">
 
   <p>Angkut Kita is an order angkot application, developed by <img src = 'https://img.shields.io/badge/Bit-Path-DD435F?style=for-the-badge&labelColor=grey'> Team</p>
