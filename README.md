@@ -5,7 +5,7 @@
   <p>  </p>
   </br>
   
-  <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" height= 50>
+  <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" height= 120>
 
   </br>
 
