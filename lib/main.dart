@@ -1,10 +1,13 @@
 import 'package:angkotkita/Pages/landingPage.dart';
 import 'package:angkotkita/Pages/loginPage.dart';
 import 'package:angkotkita/pages/authPage.dart';
+import 'package:angkotkita/pages/menuPage.dart';
+import 'package:angkotkita/widgets/mapPage.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
 import 'package:angkotkita/pages/registerPage.dart';
 import 'package:angkotkita/pages/testProfilePage.dart';
 import 'package:angkotkita/widgets/linearProgressBar.dart';
+import 'package:angkotkita/widgets/topBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -18,6 +21,7 @@ Future<void> main() async {
 }
 
 Color bgColor = Color(0xFF27374D);
+Color secondColor = Color(0xFF4F46E5);
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -37,7 +41,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: landingPage(),
+      home: MenuPage(),
     );
   }
 }

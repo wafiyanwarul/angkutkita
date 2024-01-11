@@ -1,3 +1,4 @@
+import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/onLoginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -117,6 +118,7 @@ class _testProfilePageState extends State<testProfilePage> {
                                   builder: (context) => onLoginPage(),
                                 ),
                               );
+                              showToast(message: 'Successfully logged out');
                             },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(
