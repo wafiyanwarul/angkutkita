@@ -28,17 +28,18 @@ class _TopActiveBarWidgetState extends State<TopActiveBarWidget> {
             )
           ],
         ),
-        
+
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 10,
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, // Space between widgets in Row
             children: [
+              // Active and Inactive Text
               Text(
-                _isActive ? 'Active' : 'Inactive',
+                _isActive ? 'Active' : 'Inactive', 
                 style: TextStyle(
                   color: _isActive ? secondColor : Colors.black,
                   fontFamily: 'LexendDeca',
@@ -46,16 +47,17 @@ class _TopActiveBarWidgetState extends State<TopActiveBarWidget> {
                   fontSize: 17,
                 ),
               ),
+              // Switch Button 
               CupertinoSwitch(
                 value: _isActive,
                 onChanged: (value) {
                   setState(() {
                     _isActive = value;
-                    print(_isActive);
+                    // print(_isActive);
                   });
                 },
-                activeColor: secondColor,
-                trackColor: Colors.grey,
+                activeColor: secondColor, // Active Color
+                trackColor: Colors.grey, // Inactive Color
               ),
             ],
           ),

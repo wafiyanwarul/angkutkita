@@ -1,3 +1,4 @@
+import 'package:angkotkita/widgets/customerOrderBar.dart';
 import 'package:angkotkita/widgets/mapPage.dart';
 import 'package:angkotkita/widgets/topBarWidget.dart';
 import 'package:flutter/material.dart';
@@ -18,14 +19,16 @@ class _MenuPageState extends State<MenuPage> {
           Positioned.fill(
             child: MapWidget(),
           ),
-          Positioned(
+          Positioned.fill(
             top: 80,
+            // bottom: 50,
             left: 25,
             right: 25,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TopActiveBarWidget(),
-                // Text('Test Stack'),
+                CustOrderBar(),
               ],
             ),
           ),
