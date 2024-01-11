@@ -2,7 +2,7 @@
   <h1>Welcome to <a href = ''>Angkut Kita</a></h1>
 
   <img src = 'https://img.shields.io/badge/Angkut-Kita-blue?style=for-the-badge&logo=kompas&labelColor=E0E0E0' alt = 'Angkut Kita Badge'>
-  
+  <p>  </p>
   </br>
   
   <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" width="200">
