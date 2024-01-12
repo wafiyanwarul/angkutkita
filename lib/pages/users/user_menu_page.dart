@@ -39,7 +39,7 @@ class _UserMenuPageState extends State<UserMenuPage> {
           _buildNavItem(Icons.route_rounded, 'Route', 2),
           _buildNavItem(Icons.perm_identity, 'Profile', 3),
         ],
-        color: Colors.white,
+        color: bgColor,
         buttonBackgroundColor: Colors.amber[600],
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,

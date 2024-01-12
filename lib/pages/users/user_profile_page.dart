@@ -37,7 +37,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
             children: [
               Container(
                 color: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 40),
+                padding: EdgeInsets.only(top: 40, bottom: 120),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -72,7 +72,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         'Nama', 'Wafiy Anwarul Hikam', _namaController),
                     buildTextFieldRow('Email', 'wafiyanwarulhikam12@gmail.com',
                         _emailController),
-                    buildTextFieldRow('Mobile Number', '+62 895-0399-2656',
+                    buildTextFieldRow('Mobile Number', '+62 881-2288-3344-',
                         _mobileController),
                     SizedBox(
                       height: 20,

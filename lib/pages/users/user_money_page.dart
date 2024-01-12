@@ -12,7 +12,7 @@ class _UserMoneyPageState extends State<UserMoneyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgColor,
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -25,7 +25,7 @@ class _UserMoneyPageState extends State<UserMoneyPage> {
                   fontFamily: 'LexendDeca',
                   fontWeight: FontWeight.w800,
                   fontSize: 40,
-                  color: Colors.white,
+                  color: bgColor,
                 ),
               )
             ],
@@ -39,7 +39,7 @@ class _UserMoneyPageState extends State<UserMoneyPage> {
                   fontFamily: 'LexendDeca',
                   fontWeight: FontWeight.w800,
                   fontSize: 40,
-                  color: Colors.white,
+                  color: bgColor,
                 ),
               )
             ],
