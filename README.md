@@ -7,7 +7,7 @@
 
   </br>
 
-  <p>Angkut Kita is an order angkot application, developed by <img src = 'https://img.shields.io/badge/Bit-Path-DD435F?style=for-the-badge&labelColor=grey'> Team</p>
+  <p>Angkut Kita is an order angkot application, developed by <img src = 'https://img.shields.io/badge/Code-Sprinters-blue?style=flat-square&labelColor=red'> Team</p>
   <h4>Made With</h4>
   <p><img src = 'https://img.shields.io/badge/flutter-blue?style=for-the-badge&logo=flutter&logoColor=blue&labelColor=white'> <img src = 'https://img.shields.io/badge/Firebase-orange?style=for-the-badge&logo=firebase&logoColor=orange&labelColor=white'> </p>
 </div>
@@ -17,16 +17,15 @@
 This project developed to face and solve SDGs
 
 <div align = 'center'>
-  <h3>Our team member: </h3>
-<ul>
-  <h4>Hustler: </h4>
-  <li>Alhubul Austad Ramadhan</li>
-  <h4>Hipster: </h4>
-  <li>Fairuz Ardhan Haunan</li>
-  <h4>Hipster: </h4>
-  <li>Ridho Aulia Rahman</li>
-  <li>Wafiy Anwarul Hikam</li>
-</ul>  
+  <h3>CodeSprinters</h3>
+  <h3>OUR TEAM MEMBER</h3>
+    <h4>Hustler: </h4>
+  <p>Alhubul Austad Ramadhan</p>
+    <h4>Hipster: </h4>
+  <p>Fairuz Ardhan Haunan  </p>
+    <h4>Hipster: </h4>
+  <p></p>Ridho Aulia Rahman</p>
+  <p>Wafiy Anwarul Hikam</p>
 </div>
 
 ## To trying this app, follow all of the instructions below
