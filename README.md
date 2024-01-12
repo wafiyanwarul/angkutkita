@@ -33,7 +33,7 @@ This project developed to face and solve SDGs
 <h3>Screenshots of Application</h3>
 <div align = 'center'>
 <p>Landing Page, First Page, Login Page</p>
-<img src = 'assets/images/landing_page.jpg' width = 60><img src = 'assets/images/first_page.jpg' width = 60><img src = 'assets/images/login_page.jpg' width = 60>
+<img src = 'assets/images/landing_page.jpg' width = 250><img src = 'assets/images/first_page.jpg' width = 250><img src = 'assets/images/login_page.jpg' width = 250>
 <p>Register Page, Role Choose Page</p>
 <img src = 'assets/images/register_page.jpg'><img src = 'assets/images/role_choose_page.jpg'>
 <p>Home Page Menu Driver</p>
