@@ -23,7 +23,7 @@ This project developed to face and solve SDGs
   <p>Alhubul Austad Ramadhan</p>
     <h4>Hipster: </h4>
   <p>Fairuz Ardhan Haunan  </p>
-    <h4>Hipster: </h4>
+    <h4>Hacker: </h4>
   <p></p>Ridho Aulia Rahman</p>
   <p>Wafiy Anwarul Hikam</p>
 </div>
