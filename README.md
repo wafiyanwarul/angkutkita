@@ -33,13 +33,13 @@ This project developed to face and solve SDGs
 <h3>Screenshots of Application</h3>
 <div align = 'center'>
 <p>Landing Page, First Page, Login Page</p>
-<p><img src = 'assets/images/landing_page.jpg' width = 250>  <img src = 'assets/images/first_page.jpg' width = 250>  <img src = 'assets/images/login_page.jpg' width = 250></p>
+<p><img src = 'assets/images/landing_page.jpg' width = 250>   <img src = 'assets/images/first_page.jpg' width = 250>   <img src = 'assets/images/login_page.jpg' width = 250></p>
 <p>Register Page, Role Choose Page</p>
-<p><img src = 'assets/images/register_page.jpg' width = 250>  <img src = 'assets/images/role_choose_page.jpg' width = 250></p>
+<p><img src = 'assets/images/register_page.jpg' width = 250>   <img src = 'assets/images/role_choose_page.jpg' width = 250></p>
 <p>Home Page Menu Driver</p>
-<p><img src = 'assets/images/driver_menu.jpg'></p>
+<p><img src = 'assets/images/driver_menu.jpg' width = 250></p>
 <p>Home Page Menu User, User Profile Menu</p>
-<p><img src = 'assets/images/user_menu.jpg'><img src = 'assets/images/user_profile_menu.jpg'></p>
+<p><img src = 'assets/images/user_menu.jpg'width = 250>   <img src = 'assets/images/user_profile_menu.jpg' width = 250></p>
 </div>
 
 For help getting started with Flutter development, view the
