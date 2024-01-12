@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:angkotkita/widgets/waveBottomWidget.dart';
+import 'package:angkotkita/widgets/wave_bottom-widget.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({super.key});

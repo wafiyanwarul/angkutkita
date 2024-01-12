@@ -1,5 +1,5 @@
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/phoneNumRegPage.dart';
+import 'package:angkotkita/pages/phoneNumReg_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

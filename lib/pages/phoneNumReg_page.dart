@@ -1,5 +1,5 @@
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/testProfilePage.dart';
+import 'package:angkotkita/pages/users/user_profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -164,7 +164,7 @@ class _phoneNumRegPageState extends State<phoneNumRegPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => testProfilePage(),
+                                      builder: (context) => UserProfilePage(),
                                     ),
                                   );
                                 },

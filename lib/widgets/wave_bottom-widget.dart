@@ -1,6 +1,6 @@
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/onLoginPage.dart';
-import 'package:angkotkita/pages/registerPage.dart';
+import 'package:angkotkita/pages/onLogin_page.dart';
+import 'package:angkotkita/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';

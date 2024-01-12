@@ -1,8 +1,8 @@
 import 'package:angkotkita/features/user_auth/firebase_auth_implementation/firebase_auth_service.dart';
 import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/accountConfirmPage.dart';
-import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:angkotkita/pages/accountConfirm_page.dart';
+import 'package:angkotkita/pages/onLogin_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

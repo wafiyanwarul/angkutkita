@@ -1,8 +1,9 @@
 import 'package:angkotkita/features/user_auth/firebase_auth_implementation/firebase_auth_service.dart';
 import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/registerPage.dart';
-import 'package:angkotkita/pages/testProfilePage.dart';
+import 'package:angkotkita/pages/choose_role_page.dart';
+import 'package:angkotkita/pages/register_page.dart';
+import 'package:angkotkita/pages/users/user_profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
@@ -32,17 +33,6 @@ class _onLoginPageState extends State<onLoginPage> {
     _passwordController.dispose();
     super.dispose();
   }
-
-  // void signUserIn() async {
-  //   try {
-  //     await FirebaseAuth.instance.signInWithEmailAndPassword(
-  //       email: emailController.text,
-  //       password: passwordController.text,
-  //     );
-  //   } on FirebaseAuthException catch (e) {
-  //     print("Firebase Auth Exception: ${e.message}");
-  //       }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -245,38 +235,28 @@ class _onLoginPageState extends State<onLoginPage> {
                                 child: InkWell(
                                   onTap: _signIn,
                                   child: Container(
-                                      width: double.infinity,
-                                      height: 45,
-                                      decoration: BoxDecoration(
-                                        color: Colors.blue.shade800,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Center(
-                                    child: _isSigning
-                                        ? CircularProgressIndicator(
-                                            color: Colors.white,
-                                          )
-                                        : Text(
-                                            'Login',
-                                            style: TextStyle(
+                                    width: double.infinity,
+                                    height: 45,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue.shade800,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Center(
+                                      child: _isSigning
+                                          ? CircularProgressIndicator(
                                               color: Colors.white,
-                                              fontSize: 20,
-                                              fontFamily: 'LexendDeca',
-                                              fontWeight: FontWeight.w600,
+                                            )
+                                          : Text(
+                                              'Login',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontFamily: 'LexendDeca',
+                                                fontWeight: FontWeight.w600,
+                                              ),
                                             ),
-                                          ),
-                                  )),
-
-                                  // style: ElevatedButton.styleFrom(
-                                  //   padding: EdgeInsets.symmetric(
-                                  //     horizontal: 142,
-                                  //     vertical: 10,
-                                  //   ),
-                                  //   primary: Colors.blue.shade800,
-                                  //   shape: RoundedRectangleBorder(
-                                  //     borderRadius: BorderRadius.circular(10),
-                                  //   ),
-                                  // ),
+                                    ),
+                                  ),
                                 ),
                               )
                             ],
@@ -422,7 +402,7 @@ class _onLoginPageState extends State<onLoginPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => testProfilePage(),
+          builder: (context) => ChooseRolePage(),
         ),
       );
     } else {

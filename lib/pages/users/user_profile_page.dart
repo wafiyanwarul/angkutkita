@@ -1,17 +1,17 @@
 import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
-import 'package:angkotkita/pages/onLoginPage.dart';
+import 'package:angkotkita/pages/onLogin_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class testProfilePage extends StatefulWidget {
-  const testProfilePage({super.key});
+class UserProfilePage extends StatefulWidget {
+  const UserProfilePage({super.key});
 
   @override
-  State<testProfilePage> createState() => _testProfilePageState();
+  State<UserProfilePage> createState() => _UserProfilePageState();
 }
 
-class _testProfilePageState extends State<testProfilePage> {
+class _UserProfilePageState extends State<UserProfilePage> {
   int _selectedIndex = 0;
   bool _isEditing = false;
 
@@ -150,26 +150,25 @@ class _testProfilePageState extends State<testProfilePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        // backgroundColor: Colors.white,
-        items: [
-          buildNavBarItem(Icons.home, 'Home', 0),
-          buildNavBarItem(Icons.attach_money, 'Money', 1),
-          buildNavBarItem(Icons.route, 'Route', 2),
-          buildNavBarItem(Icons.account_circle, 'Account', 3),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   // backgroundColor: Colors.white,
+      //   items: [
+      //     buildNavBarItem(Icons.home, 'Home', 0),
+      //     buildNavBarItem(Icons.attach_money, 'Money', 1),
+      //     buildNavBarItem(Icons.route, 'Route', 2),
+      //     buildNavBarItem(Icons.account_circle, 'Account', 3),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _selectedIndex = index;
+      //     });
+      //   },
+      // ),
     );
   }
 
-  BottomNavigationBarItem buildNavBarItem(
-      IconData icon, String label, int index) {
+  BottomNavigationBarItem buildNavBarItem(IconData icon, String label, int index) {
     return BottomNavigationBarItem(
       backgroundColor: bgColor,
       icon: InkWell(

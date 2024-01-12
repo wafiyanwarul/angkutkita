@@ -17,11 +17,11 @@ class _TopActiveBarWidgetState extends State<TopActiveBarWidget> {
     return Positioned(
       child: Container( // White Box for Switch and Text
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.8),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: Colors.grey,
               spreadRadius: 2,
               blurRadius: 10,
               offset: Offset(0, 3),

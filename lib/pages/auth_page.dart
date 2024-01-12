@@ -1,6 +1,6 @@
-import 'package:angkotkita/pages/loginPage.dart';
-import 'package:angkotkita/pages/onLoginPage.dart';
-import 'package:angkotkita/pages/testProfilePage.dart';
+import 'package:angkotkita/pages/login_page.dart';
+import 'package:angkotkita/pages/onLogin_page.dart';
+import 'package:angkotkita/pages/users/user_profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class _authPageState extends State<authPage> {
         builder: (context, snapshot) {
           // user is logged in
           if (snapshot.hasData) {
-            return testProfilePage();
+            return UserProfilePage();
           }
           //  user is NOT logged in
           else {

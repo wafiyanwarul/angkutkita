@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:angkotkita/Pages/landingPage.dart';
-import 'package:angkotkita/Pages/loginPage.dart';
+import 'package:angkotkita/Pages/landing_page.dart';
+import 'package:angkotkita/Pages/login_page.dart';
 import 'package:angkotkita/main.dart';
 import 'package:flutter/material.dart';
 

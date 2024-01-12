@@ -1,13 +1,6 @@
-import 'package:angkotkita/Pages/landingPage.dart';
-import 'package:angkotkita/Pages/loginPage.dart';
-import 'package:angkotkita/pages/authPage.dart';
-import 'package:angkotkita/pages/menuPage.dart';
-import 'package:angkotkita/widgets/mapPage.dart';
-import 'package:angkotkita/pages/onLoginPage.dart';
-import 'package:angkotkita/pages/registerPage.dart';
-import 'package:angkotkita/pages/testProfilePage.dart';
-import 'package:angkotkita/widgets/linearProgressBar.dart';
-import 'package:angkotkita/widgets/topBarWidget.dart';
+import 'package:angkotkita/pages/choose_role_page.dart';
+import 'package:angkotkita/pages/drivers/menu_page.dart';
+import 'package:angkotkita/pages/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -41,7 +34,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: MenuPage(),
+      home: landingPage(),
     );
   }
 }

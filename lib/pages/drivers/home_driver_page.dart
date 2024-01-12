@@ -1,16 +1,17 @@
-import 'package:angkotkita/widgets/customerOrderBar.dart';
-import 'package:angkotkita/widgets/mapPage.dart';
-import 'package:angkotkita/widgets/topBarWidget.dart';
+import 'package:angkotkita/pages/drivers/menu_page.dart';
+import 'package:angkotkita/widgets/customer_order_bar.dart';
+import 'package:angkotkita/widgets/map_widget.dart';
+import 'package:angkotkita/widgets/top_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+class HomePageDriver extends StatefulWidget {
+  const HomePageDriver({super.key});
 
   @override
-  State<MenuPage> createState() => _MenuPageState();
+  State<HomePageDriver> createState() => _HomePageDriverState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _HomePageDriverState extends State<HomePageDriver> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,6 @@ class _MenuPageState extends State<MenuPage> {
           ),
           Positioned.fill(
             top: 80,
-            // bottom: 50,
             left: 25,
             right: 25,
             child: Column(
@@ -31,13 +31,7 @@ class _MenuPageState extends State<MenuPage> {
                 CustOrderBar(),
               ],
             ),
-          ),
-
-          // Column(
-          //   children: [
-
-          //   ],
-          // ),
+          ),          
         ],
       ),
     );

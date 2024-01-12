@@ -1,7 +1,6 @@
 import 'package:angkotkita/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustOrderBar extends StatefulWidget {
   const CustOrderBar({super.key});
@@ -17,7 +16,15 @@ class _CustOrderBarState extends State<CustOrderBar> {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.8),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 2,
+              blurRadius: 10,
+              offset: Offset(0, 3),
+            )
+          ],
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
@@ -27,7 +34,7 @@ class _CustOrderBarState extends State<CustOrderBar> {
           top: 15,
           left: 20,
           right: 20,
-          bottom: 100,
+          bottom: 120,
         ),
         child: Column(
           children: [
@@ -151,7 +158,9 @@ class _CustOrderBarState extends State<CustOrderBar> {
                 ),
               ],
             ),
+            // Spacebar
             SizedBox(height: 10),
+            // Line Separator
             Container(
               height: 1,
               width: double.infinity,
@@ -160,8 +169,9 @@ class _CustOrderBarState extends State<CustOrderBar> {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
+            // Spacebar
             SizedBox(height: 10),
-            // Customer Order Profile
+            // Customer Order Profile 2
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

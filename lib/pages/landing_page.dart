@@ -1,4 +1,4 @@
-import 'package:angkotkita/widgets/linearProgressBar.dart';
+import 'package:angkotkita/widgets/linear_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:angkotkita/main.dart';
 
