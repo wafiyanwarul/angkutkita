@@ -33,13 +33,13 @@ This project developed to face and solve SDGs
 <h3>Screenshots of Application</h3>
 <div align = 'center'>
 <p>Landing Page, First Page, Login Page</p>
-<img src = 'assets/images/landing_page.jpg' width = 250><img src = 'assets/images/first_page.jpg' width = 250><img src = 'assets/images/login_page.jpg' width = 250>
+<p><img src = 'assets/images/landing_page.jpg' width = 250>  <img src = 'assets/images/first_page.jpg' width = 250>  <img src = 'assets/images/login_page.jpg' width = 250></p>
 <p>Register Page, Role Choose Page</p>
-<img src = 'assets/images/register_page.jpg'><img src = 'assets/images/role_choose_page.jpg'>
+<p><img src = 'assets/images/register_page.jpg' width = 250>  <img src = 'assets/images/role_choose_page.jpg' width = 250></p>
 <p>Home Page Menu Driver</p>
-<img src = 'assets/images/driver_menu.jpg'>
+<p><img src = 'assets/images/driver_menu.jpg'></p>
 <p>Home Page Menu User, User Profile Menu</p>
-<img src = 'assets/images/user_menu.jpg'><img src = 'assets/images/user_profile_menu.jpg'>
+<p><img src = 'assets/images/user_menu.jpg'><img src = 'assets/images/user_profile_menu.jpg'></p>
 </div>
 
 For help getting started with Flutter development, view the
