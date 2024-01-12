@@ -16,12 +16,20 @@
 
 This project developed to face and solve SDGs
 
+<div align = 'center'>
+  <h3>Our team member: </h3>
+<ul>
+  <h4>Hustler: </h4>
+  <li>Alhubul Austad Ramadhan</li>
+  <h4>Hipster: </h4>
+  <li>Fairuz Ardhan Haunan</li>
+  <h4>Hipster: </h4>
+  <li>Ridho Aulia Rahman</li>
+  <li>Wafiy Anwarul Hikam</li>
+</ul>  
+</div>
+
 ## To trying this app, follow all of the instructions below
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
