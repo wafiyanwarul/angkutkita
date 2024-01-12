@@ -30,8 +30,8 @@ This project developed to face and solve SDGs
 
 ## To trying this app, follow all of the instructions below
 
-<h3>Screenshots of Application</h3>
 <div align = 'center'>
+<h3>Screenshots of Application</h3>
 <p>Landing Page, First Page, Login Page</p>
 <p><img src = 'assets/images/landing_page.jpg' width = 250>   <img src = 'assets/images/first_page.jpg' width = 250>   <img src = 'assets/images/login_page.jpg' width = 250></p>
 <p>Register Page, Role Choose Page</p>
