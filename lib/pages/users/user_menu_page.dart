@@ -1,7 +1,8 @@
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/drivers/home_driver_page.dart';
+import 'package:angkotkita/pages/users/user_route_page.dart';
 import 'package:angkotkita/pages/users/user_location_page.dart';
-import 'package:angkotkita/pages/users/user_money_page.dart';
+import 'package:angkotkita/pages/users/user_order_page.dart';
 import 'package:angkotkita/pages/users/user_profile_page.dart';
 import 'package:angkotkita/pages/users/user_route_page.dart';
 import 'package:flutter/material.dart';
@@ -29,13 +30,13 @@ class _UserMenuPageState extends State<UserMenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      extendBody: false,
       bottomNavigationBar: CurvedNavigationBar(
         index: _bottomNavIndex,
         height: 70,
         items: <Widget>[
           _buildNavItem(Icons.home_filled, 'Home', 0),
-          _buildNavItem(Icons.money, 'Money', 1),
+          _buildNavItem(Icons.money, 'Order', 1),
           _buildNavItem(Icons.route_rounded, 'Route', 2),
           _buildNavItem(Icons.perm_identity, 'Profile', 3),
         ],

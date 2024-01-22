@@ -1,6 +1,8 @@
 import 'package:angkotkita/pages/choose_role_page.dart';
 import 'package:angkotkita/pages/drivers/menu_page.dart';
 import 'package:angkotkita/pages/landing_page.dart';
+import 'package:angkotkita/pages/users/user_menu_page.dart';
+import 'package:angkotkita/utils/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -10,6 +12,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // await UserPreferences.init();
+  
   runApp(const MyApp());
 }
 

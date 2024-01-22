@@ -1,4 +1,3 @@
-import 'package:angkotkita/pages/drivers/menu_page.dart';
 import 'package:angkotkita/widgets/customer_order_bar.dart';
 import 'package:angkotkita/widgets/map_widget.dart';
 import 'package:angkotkita/widgets/top_bar_widget.dart';
@@ -14,7 +13,7 @@ class HomePageDriver extends StatefulWidget {
 class _HomePageDriverState extends State<HomePageDriver> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [
           Positioned.fill(

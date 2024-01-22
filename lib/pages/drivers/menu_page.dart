@@ -1,4 +1,3 @@
-import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/drivers/money_driver_page.dart';
 import 'package:angkotkita/pages/drivers/profile_driver_page.dart';
 import 'package:angkotkita/pages/drivers/route_driver_page.dart';
@@ -14,7 +13,6 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   int _bottomNavIndex = 0;
 

@@ -22,11 +22,11 @@ class _MapWidgetState extends State<MapWidget> {
             zoom: 17,
           ),
           markers: {
-            Marker(
-              markerId: MarkerId("_currentLocation"),
-              icon: BitmapDescriptor.defaultMarker,
-              position: _pGooglePlex,
-            ),
+            // Marker(
+            //   markerId: MarkerId("_currentLocation"),
+            //   icon: BitmapDescriptor.defaultMarker,
+            //   position: _pGooglePlex,
+            // ),
           }),
     );
   }

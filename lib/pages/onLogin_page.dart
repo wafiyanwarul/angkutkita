@@ -1,12 +1,11 @@
+// ignore: file_names
 import 'package:angkotkita/features/user_auth/firebase_auth_implementation/firebase_auth_service.dart';
 import 'package:angkotkita/global/command/toast.dart';
 import 'package:angkotkita/main.dart';
 import 'package:angkotkita/pages/choose_role_page.dart';
 import 'package:angkotkita/pages/register_page.dart';
-import 'package:angkotkita/pages/users/user_profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
 
 // import 'package:firebase_auth/firebase_auth.dart';
 

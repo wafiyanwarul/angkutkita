@@ -13,6 +13,9 @@ class _loginPageState extends State<loginPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height * 0.15;
+
     return Scaffold(
       body: Container(
         color: bgColor,
@@ -21,42 +24,46 @@ class _loginPageState extends State<loginPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 150),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Text(
-                        'AngkutKita.',
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.w900,
-                          fontFamily: 'LexendDeca',
-                          color: Colors.white,
-                        ),
+                padding: EdgeInsets.symmetric(vertical: screenHeight),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            'AngkutKita.',
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.w900,
+                              fontFamily: 'LexendDeca',
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            'Everywhere, Anywhere, Anytime.',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'LexendDeca',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 8,
+                    ),
+                    SizedBox(height: screenHeight,),
+                    // Image AngkotKita
+                    Container(
+                      child: Image.asset(
+                        'assets/images/angkotKitaLogo.png',
+                        width: 250,
                       ),
-                      Text(
-                        'Everywhere, Anywhere, Anytime.',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w300,
-                          fontFamily: 'LexendDeca',
-                          color: Colors.white,
-                        ),
-                      ),
-                      // Image AngkotKita
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 150),
-                        child: Image.asset(
-                          'assets/images/angkotKitaLogo.png',
-                          width: 250,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               // buildLoginButton(),

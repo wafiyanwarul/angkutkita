@@ -20,11 +20,11 @@ class _authPageState extends State<authPage> {
         builder: (context, snapshot) {
           // user is logged in
           if (snapshot.hasData) {
-            return UserProfilePage();
+            return const UserProfilePage();
           }
           //  user is NOT logged in
           else {
-            return loginPage();
+            return const loginPage();
           }
         },
       ),
