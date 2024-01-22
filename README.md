@@ -6,15 +6,22 @@
   <img src="assets/images/angkotKitaLogo.png" alt="Logo Angkut Kita" height= 130>
 
   </br>
-
-  <p>Angkut Kita is an order angkot application, developed by <img src = 'https://img.shields.io/badge/Code-Sprinters-blue?style=flat-square&labelColor=red'> Team</p>
+  <div align = 'justify'>
+    <p>Angkut Kita is an order angkot application to make it easier on find nearest angkot around us, developed by <img src = 'https://img.shields.io/badge/Code-Sprinters-blue?style=flat-square&labelColor=red'> Team. In this application we can choose two different roles, as a driver and user. If we choose user we can order an angkot by looking for nearest angkot around us also we can look for angkot routes. And as a driver we can accept for a customer order by looking in the maps inside this application.</p>
+  </div>
   <h4>Made With</h4>
   <p><img src = 'https://img.shields.io/badge/flutter-blue?style=for-the-badge&logo=flutter&logoColor=blue&labelColor=white'> <img src = 'https://img.shields.io/badge/Firebase-orange?style=for-the-badge&logo=firebase&logoColor=orange&labelColor=white'> </p>
 </div>
 
 </br>
 
-This project developed to face and solve SDGs
+<div>
+  <ul>
+    <h3>Features: </h3>
+    <li>Order an Angkot</li>
+    <li>Looking for angkot routes</li>
+  </ul>
+</div>
 
 <div align = 'center'>
   <h3>CodeSprinters</h3>
@@ -23,7 +30,7 @@ This project developed to face and solve SDGs
   <p>Alhubul Austad Ramadhan</p>
     <h4>Hipster: </h4>
   <p>Fairuz Ardhan Haunan  </p>
-    <h4>Hipster: </h4>
+    <h4>Hacker: </h4>
   <p></p>Ridho Aulia Rahman</p>
   <p>Wafiy Anwarul Hikam</p>
 </div>
