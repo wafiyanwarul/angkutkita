@@ -13,8 +13,6 @@
   <p><img src = 'https://img.shields.io/badge/flutter-blue?style=for-the-badge&logo=flutter&logoColor=blue&labelColor=white'> <img src = 'https://img.shields.io/badge/Firebase-orange?style=for-the-badge&logo=firebase&logoColor=orange&labelColor=white'> </p>
 </div>
 
-</br>
-
 <div>
   <ul>
     <h3>Features: </h3>
